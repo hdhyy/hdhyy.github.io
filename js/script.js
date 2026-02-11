@@ -1,136 +1,169 @@
-(function($){
-  // Search
-  var $searchWrap = $('#search-form-wrap'),
-    isSearchAnim = false,
-    searchAnimDuration = 200;
+/**
+ * Hardy Augustus Blog — Main Script (Vanilla JS, no jQuery)
+ */
+(function () {
+  'use strict';
 
-  var startSearchAnim = function(){
-    isSearchAnim = true;
-  };
+  // --- Utility ---
+  var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
+  var $$ = function (sel, ctx) { return (ctx || document).querySelectorAll(sel); };
 
-  var stopSearchAnim = function(callback){
-    setTimeout(function(){
-      isSearchAnim = false;
-      callback && callback();
-    }, searchAnimDuration);
-  };
+  // Wait for DOM ready
+  document.addEventListener('DOMContentLoaded', function () {
 
-  $('#nav-search-btn').on('click', function(){
-    if (isSearchAnim) return;
+    // ========== Search ==========
+    var searchWrap = $('#search-form-wrap');
+    var searchBtn = $('#nav-search-btn');
+    var searchInput = $('.search-form-input');
+    var isSearchAnim = false;
 
-    startSearchAnim();
-    $searchWrap.addClass('on');
-    stopSearchAnim(function(){
-      $('.search-form-input').focus();
-    });
-  });
+    if (searchBtn && searchWrap && searchInput) {
+      searchBtn.addEventListener('click', function () {
+        if (isSearchAnim) return;
+        isSearchAnim = true;
+        searchWrap.classList.add('on');
+        setTimeout(function () {
+          searchInput.focus();
+          isSearchAnim = false;
+        }, 250);
+      });
 
-  $('.search-form-input').on('blur', function(){
-    startSearchAnim();
-    $searchWrap.removeClass('on');
-    stopSearchAnim();
-  });
-
-  // Share
-  $('body').on('click', function(){
-    $('.article-share-box.on').removeClass('on');
-  }).on('click', '.article-share-link', function(e){
-    e.stopPropagation();
-
-    var $this = $(this),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      id = 'article-share-box-' + $this.attr('data-id'),
-      offset = $this.offset();
-
-    if ($('#' + id).length){
-      var box = $('#' + id);
-
-      if (box.hasClass('on')){
-        box.removeClass('on');
-        return;
-      }
-    } else {
-      var html = [
-        '<div id="' + id + '" class="article-share-box">',
-          '<input class="article-share-input" value="' + url + '">',
-          '<div class="article-share-links">',
-            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-            '<a href="https://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-          '</div>',
-        '</div>'
-      ].join('');
-
-      var box = $(html);
-
-      $('body').append(box);
+      searchInput.addEventListener('blur', function () {
+        if (isSearchAnim) return;
+        isSearchAnim = true;
+        searchWrap.classList.remove('on');
+        setTimeout(function () {
+          isSearchAnim = false;
+        }, 250);
+      });
     }
 
-    $('.article-share-box.on').hide();
+    // ========== Share ==========
+    document.addEventListener('click', function (e) {
+      // Close all open share boxes
+      var openBoxes = $$('.article-share-box.on');
+      openBoxes.forEach(function (box) { box.classList.remove('on'); });
 
-    box.css({
-      top: offset.top + 25,
-      left: offset.left
-    }).addClass('on');
-  }).on('click', '.article-share-box', function(e){
-    e.stopPropagation();
-  }).on('click', '.article-share-box-input', function(){
-    $(this).select();
-  }).on('click', '.article-share-box-link', function(e){
-    e.preventDefault();
-    e.stopPropagation();
+      // Share link click
+      var shareLink = e.target.closest('.article-share-link');
+      if (shareLink) {
+        e.stopPropagation();
+        var url = shareLink.getAttribute('data-url');
+        var encodedUrl = encodeURIComponent(url);
+        var id = 'article-share-box-' + shareLink.getAttribute('data-id');
+        var box = document.getElementById(id);
 
-    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-  });
+        if (box) {
+          box.classList.toggle('on');
+        } else {
+          box = document.createElement('div');
+          box.id = id;
+          box.className = 'article-share-box';
+          box.innerHTML =
+            '<input class="article-share-input" value="' + url + '" readonly>' +
+            '<div class="article-share-links">' +
+              '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" rel="noopener noreferrer" title="Twitter"></a>' +
+              '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" rel="noopener noreferrer" title="Facebook"></a>' +
+              '<a href="https://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" rel="noopener noreferrer" title="Pinterest"></a>' +
+            '</div>';
+          document.body.appendChild(box);
+          box.classList.add('on');
+        }
 
-  // Caption
-  $('.article-entry').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
+        var rect = shareLink.getBoundingClientRect();
+        box.style.top = (window.scrollY + rect.bottom + 8) + 'px';
+        box.style.left = (rect.left - 80) + 'px';
+        return;
+      }
 
-      var alt = this.alt;
-
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+      // Click inside share box — don't close
+      if (e.target.closest('.article-share-box')) {
+        e.stopPropagation();
+      }
     });
 
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
+    // Select share input on click
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('article-share-input')) {
+        e.target.select();
+      }
     });
+
+    // ========== Image Captions & Fancybox ==========
+    $$('.article-entry').forEach(function (entry, i) {
+      entry.querySelectorAll('img').forEach(function (img) {
+        if (img.parentElement.classList.contains('fancybox')) return;
+        var alt = img.alt || '';
+
+        var link = document.createElement('a');
+        link.href = img.src;
+        link.title = alt;
+        link.className = 'fancybox';
+        link.setAttribute('rel', 'article' + i);
+        img.parentNode.insertBefore(link, img);
+        link.appendChild(img);
+
+        if (alt) {
+          var caption = document.createElement('span');
+          caption.className = 'caption';
+          caption.textContent = alt;
+          link.parentNode.insertBefore(caption, link.nextSibling);
+        }
+      });
+    });
+
+    // Initialize Fancybox if available (jQuery plugin)
+    if (typeof jQuery !== 'undefined' && jQuery.fn.fancybox) {
+      jQuery('.fancybox').fancybox();
+    }
+
+    // ========== Mobile Navigation ==========
+    var container = $('#container');
+    var navToggle = $('#main-nav-toggle');
+    var wrap = $('#wrap');
+    var isMobileNavAnim = false;
+
+    if (navToggle && container && wrap) {
+      navToggle.addEventListener('click', function () {
+        if (isMobileNavAnim) return;
+        isMobileNavAnim = true;
+        container.classList.toggle('mobile-nav-on');
+        setTimeout(function () { isMobileNavAnim = false; }, 300);
+      });
+
+      wrap.addEventListener('click', function () {
+        if (isMobileNavAnim || !container.classList.contains('mobile-nav-on')) return;
+        container.classList.remove('mobile-nav-on');
+      });
+    }
+
+    // ========== Back to Top ==========
+    var backToTop = document.createElement('button');
+    backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.setAttribute('title', 'Back to top');
+    document.body.appendChild(backToTop);
+
+    var scrollThreshold = 400;
+    var ticking = false;
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          if (window.scrollY > scrollThreshold) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
   });
-
-  if ($.fancybox){
-    $('.fancybox').fancybox();
-  }
-
-  // Mobile nav
-  var $container = $('#container'),
-    isMobileNavAnim = false,
-    mobileNavAnimDuration = 200;
-
-  var startMobileNavAnim = function(){
-    isMobileNavAnim = true;
-  };
-
-  var stopMobileNavAnim = function(){
-    setTimeout(function(){
-      isMobileNavAnim = false;
-    }, mobileNavAnimDuration);
-  }
-
-  $('#main-nav-toggle').on('click', function(){
-    if (isMobileNavAnim) return;
-
-    startMobileNavAnim();
-    $container.toggleClass('mobile-nav-on');
-    stopMobileNavAnim();
-  });
-
-  $('#wrap').on('click', function(){
-    if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
-
-    $container.removeClass('mobile-nav-on');
-  });
-})(jQuery);
+})();
