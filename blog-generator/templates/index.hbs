@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hardy Augustus 的技术博客 - 分享关于 AI、编程和技术的思考">
+  <title>Hardy Augustus - 技术博客</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/modern.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <h1 class="logo"><a href="/">Hardy's Blog</a></h1>
+          <p class="tagline">Thoughts on technology and life</p>
+        </div>
+        <div class="header-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Search -->
+        <div class="widget">
+          <h3 class="widget-title">Search</h3>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search articles..."
+          >
+        </div>
+
+        <!-- Tags -->
+        <div class="widget">
+          <h3 class="widget-title">Tags</h3>
+          <div class="tags-cloud" id="tagsCloud">
+            {{#each tags}}
+            <span class="tag">{{this}}</span>
+            {{/each}}
+          </div>
+        </div>
+
+        <!-- Archives -->
+        <div class="widget">
+          <h3 class="widget-title">Archives</h3>
+          <ul class="archive-list" id="archiveList">
+            <li><a href="/">All Posts</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div class="widget">
+          <h3 class="widget-title">About</h3>
+          <p class="about-text">
+            A software engineer passionate about AI, distributed systems, and elegant code design.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Posts -->
+      <section class="posts">
+        <div id="postsContainer" class="posts-list">
+          {{#each posts}}
+          <article class="post-card">
+            <div class="post-date">{{this.formattedDate}}</div>
+            <h2 class="post-title">
+              <a href="{{this.path}}">{{this.title}}</a>
+            </h2>
+            <p class="post-summary">{{this.summary}}</p>
+            {{#if this.tags}}
+            <div class="post-tags">
+              {{#each this.tags}}
+              <span class="post-tag">{{this}}</span>
+              {{/each}}
+            </div>
+            {{/if}}
+          </article>
+          {{/each}}
+        </div>
+        <div id="noResults" class="no-results" style="display: none;">
+          <p>No articles found</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2019-2026 Hardy Augustus. All rights reserved.</p>
+        <p>Powered by <a href="https://github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

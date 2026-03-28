@@ -1,90 +1,147 @@
-# Hardy Augustus - 个人博客
+# Hardy Augustus - 技术博客
 
-基于 [Hexo](https://hexo.io/) 构建的静态个人博客，托管于 GitHub Pages。
+一个现代化的静态博客系统，专注于 AI、编程和技术分享。
 
-**线上地址**: https://hdhyy.github.io
+## 🎯 特性
 
-## 项目结构
+- **模板化内容管理** - 使用 Markdown 编写文章，Handlebars 模板生成 HTML
+- **50+ AI 主题文章** - 涵盖 LLM、智能体、知识图谱、计算机视觉、NLP 等领域
+- **每日 AI 新闻爬虫** - 自动抓取 HackerNews 和 ArXiv 的 AI 相关内容
+- **GitHub Actions 定时任务** - 每天自动发布 AI 新闻总结
+- **响应式设计** - 完美适配桌面、平板和手机
+- **深色/浅色主题** - 一键切换主题，自动保存偏好
+- **客户端搜索** - 实时搜索文章，无需后端
+
+## 📁 项目结构
 
 ```
 hdhyy.github.io/
-├── index.html                  # 首页
-├── archives/                   # 归档页面
-│   ├── index.html              # 全部归档
-│   └── 2019/                   # 按年/月归档
-├── 2019/05/18/hello-world/     # 博客文章（按日期组织）
-├── css/
-│   ├── style.css               # 主样式表（CSS 变量 + Flexbox/Grid）
-│   ├── fonts/                  # FontAwesome 字体文件
-│   └── images/
-│       └── banner.jpg          # 页头横幅图
+├── blog-generator/              # 博客生成系统
+│   ├── content/                 # Markdown 文章内容
+│   ├── templates/               # Handlebars 模板
+│   │   ├── index.hbs           # 主页模板
+│   │   └── post.hbs            # 文章页面模板
+│   ├── scripts/
+│   │   └── news-crawler.js      # AI 新闻爬虫脚本
+│   ├── generate.js              # 静态站点生成器
+│   └── package.json
+├── .github/workflows/
+│   └── daily-news.yml           # GitHub Actions 定时任务
+├── css/                         # 样式文件
+│   ├── modern.css              # 现代化样式
+│   └── post.css                # 文章页面样式
 ├── js/
-│   └── script.js               # 站点交互脚本（原生 JS，无 jQuery 依赖）
-├── favicon.svg                 # SVG 站点图标
-└── fancybox/                   # Fancybox 图片灯箱库
+│   └── app.js                  # 客户端脚本
+├── index.html                  # 主页
+└── 2026/                        # 文章页面目录
 ```
 
-## 技术栈
+## 🚀 快速开始
 
-| 类别 | 技术 | 说明 |
-|------|------|------|
-| 静态生成 | Hexo | 3.8.0 |
-| 核心脚本 | Vanilla JS | 零依赖，原生 DOM API |
-| 图片灯箱 | Fancybox + jQuery | 仅灯箱功能依赖 jQuery |
-| 图标字体 | FontAwesome | 4.0.3 |
-| 代码字体 | Source Code Pro | Google Fonts |
-| 部署平台 | GitHub Pages | 自动部署 |
-
-## 前端特性
-
-### 现代 CSS 架构
-- **CSS 自定义属性**: 全站使用 CSS Variables 管理颜色、间距、字体等设计令牌
-- **Flexbox / Grid 布局**: 主内容区 Flexbox 两栏布局，归档页 CSS Grid 网格
-- **自动暗色模式**: 通过 `prefers-color-scheme` 媒体查询自动适配系统主题
-- **无障碍优先**: `:focus-visible` 焦点样式、ARIA 标签、`prefers-reduced-motion` 动画降级
-
-### 响应式设计
-- **桌面端** (>=768px): 双栏布局 + 侧边栏
-- **平板端** (480-767px): 单栏布局，归档双列网格
-- **移动端** (<479px): 汉堡菜单 + 侧滑导航
-
-### 交互功能
-- **文章分享**: Twitter、Facebook、Pinterest 一键分享
-- **站内搜索**: 基于 Google 自定义搜索，动画展开
-- **图片灯箱**: 文章图片自动启用 Fancybox 放大查看
-- **返回顶部**: 滚动超过 400px 显示，`requestAnimationFrame` 节流
-- **代码高亮**: Tomorrow Night 深色主题，桌面端圆角代码块
-
-### 性能优化
-- 核心脚本 **零 jQuery 依赖**，仅灯箱保留 jQuery
-- `font-display: swap` 避免字体阻塞
-- CSS 过渡使用 `transform` / `opacity` 触发 GPU 合成
-- 自定义精简滚动条样式
-
-## 本地开发
-
-本仓库为 Hexo 编译后的静态产物，可直接用任意静态服务器预览：
+### 本地开发
 
 ```bash
-# 方式一：Python
-python3 -m http.server 8000
+cd blog-generator
 
-# 方式二：Node.js（需安装 serve）
-npx serve .
+# 安装依赖
+npm install
+
+# 生成静态站点
+node generate.js
+
+# 测试 AI 新闻爬虫
+node scripts/news-crawler.js
 ```
 
-然后访问 http://localhost:8000 即可。
+### 添加新文章
 
-## 部署
+在 `blog-generator/content/` 目录下创建 Markdown 文件：
 
-推送到 `master` 分支后，GitHub Pages 会自动部署更新。
+```markdown
+---
+title: 文章标题
+date: 2026-03-28
+tags: ["标签1", "标签2"]
+summary: 文章摘要
+---
 
-```bash
-git add .
-git commit -m "更新内容"
-git push origin master
+## 正文
+
+这是文章内容...
 ```
 
-## 许可证
+然后运行 `node generate.js` 生成静态 HTML。
 
-本项目内容版权归 Hardy Augustus 所有。Hexo 主题遵循其原始许可协议。
+## 📅 定时任务
+
+GitHub Actions 配置在 `.github/workflows/daily-news.yml`，每天 UTC 8:00（北京时间 16:00）自动运行：
+
+1. 从 HackerNews 和 ArXiv 抓取 AI 新闻
+2. 生成新闻总结文章
+3. 重新生成静态站点
+4. 自动提交并推送到 GitHub
+
+## 🔧 技术栈
+
+- **静态生成**: Node.js + Handlebars + Marked
+- **爬虫**: Axios + Cheerio
+- **定时任务**: GitHub Actions + node-cron
+- **前端**: HTML5 + CSS3 + Vanilla JavaScript
+- **托管**: GitHub Pages
+
+## 📝 文章管理
+
+### 文章元数据
+
+每篇文章的 Front Matter 包含：
+
+- `title` - 文章标题
+- `date` - 发布日期（YYYY-MM-DD 格式）
+- `tags` - 标签数组
+- `summary` - 文章摘要
+
+### 自动生成的字段
+
+- `formattedDate` - 格式化的日期
+- `path` - 文章 URL 路径
+
+## 🎨 主题定制
+
+编辑 `css/modern.css` 中的 CSS 变量来自定义主题：
+
+```css
+:root {
+  --primary-color: #f97316;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  /* ... 更多变量 */
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  /* ... */
+}
+```
+
+## 📊 新闻爬虫配置
+
+编辑 `blog-generator/scripts/news-crawler.js` 来：
+
+- 添加新的新闻源
+- 修改 AI 关键词过滤
+- 调整新闻数量和排序
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+## 📄 许可证
+
+MIT License
+
+---
+
+**访问博客**: https://hdhyy.github.io/
+
+**最后更新**: 2026-03-28

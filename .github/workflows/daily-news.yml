@@ -1,0 +1,41 @@
+name: Daily AI News Crawler
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd blog-generator
+          npm install
+
+      - name: Fetch AI news and generate article
+        run: |
+          cd blog-generator
+          node scripts/news-crawler.js
+
+      - name: Generate static site
+        run: |
+          cd blog-generator
+          node generate.js
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-publish daily AI news summary" && git push)

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{title}}">
+  <title>{{title}} - Hardy Augustus</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/modern.css">
+  <link rel="stylesheet" href="/css/post.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <h1 class="logo"><a href="/">Hardy's Blog</a></h1>
+          <p class="tagline">Thoughts on technology and life</p>
+        </div>
+        <div class="header-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container post-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Navigation -->
+        <div class="widget">
+          <h3 class="widget-title">Navigation</h3>
+          <ul class="nav-list">
+            <li><a href="/">← Back to Home</a></li>
+            <li><a href="/archives">Archives</a></li>
+          </ul>
+        </div>
+
+        <!-- Tags -->
+        {{#if tags}}
+        <div class="widget">
+          <h3 class="widget-title">Tags</h3>
+          <div class="tags-cloud">
+            {{{tagsDisplay}}}
+          </div>
+        </div>
+        {{/if}}
+
+        <!-- About -->
+        <div class="widget">
+          <h3 class="widget-title">About</h3>
+          <p class="about-text">
+            A software engineer passionate about AI, distributed systems, and elegant code design.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Post Content -->
+      <section class="post">
+        <article class="post-article">
+          <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+            <div class="post-meta">
+              <time datetime="{{date}}">{{formattedDate}}</time>
+            </div>
+          </header>
+
+          <div class="post-content">
+            {{{content}}}
+          </div>
+
+          {{#if tags}}
+          <footer class="post-footer">
+            <div class="post-tags">
+              {{{postTags}}}
+            </div>
+          </footer>
+          {{/if}}
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2019-2026 Hardy Augustus. All rights reserved.</p>
+        <p>Powered by <a href="https://github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
