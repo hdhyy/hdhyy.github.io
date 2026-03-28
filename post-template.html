@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="智能体时代的到来：从对话到行动">
-  <title>智能体时代的到来：从对话到行动 - Hardy Augustus</title>
+  <meta name="description" content="{{description}}">
+  <title>{{title}} - Hardy Augustus</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/modern.css">
   <link rel="stylesheet" href="/css/post.css">
@@ -56,8 +56,8 @@
         <!-- Tags -->
         <div class="widget">
           <h3 class="widget-title">Tags</h3>
-          <div class="tags-cloud">
-            <span class="tag">AI</span><span class="tag">智能体</span>
+          <div class="tags-cloud" id="tagsCloud">
+            {{tags}}
           </div>
         </div>
 
@@ -74,40 +74,28 @@
       <section class="post">
         <article class="post-article">
           <header class="post-header">
-            <h1 class="post-title">智能体时代的到来：从对话到行动</h1>
+            <h1 class="post-title">{{title}}</h1>
             <div class="post-meta">
-              <time datetime="2026-03-25">March 25, 2026</time>
+              <time datetime="{{date}}">{{formattedDate}}</time>
             </div>
           </header>
 
           <div class="post-content">
-            <p>2026年3月，AI 领域经历了一场深刻的范式转移——"智能体转向"（The Agentic Shift）。如果说 2024 年是聊天机器人的巅峰，那么 2026 年则是自主智能体的元年。</p>
-
-<p>这个转变的核心是：从被动的对话系统，转向主动的行动系统。AI 不再只是回答问题，而是能够自主地制定计划、执行任务、与环境交互，并根据反馈调整策略。</p>
-
-<blockquote>智能体不是在等待指令的工具，而是能够自主思考和行动的助手。</blockquote>
-
-<h2>智能体的三大特征</h2>
-
-<p><strong>自主性：</strong>智能体能够独立地制定目标和计划，而不需要人类的逐步指导。</p>
-
-<p><strong>交互性：</strong>智能体能够与环境和其他系统进行交互，获取信息并执行操作。</p>
-
-<p><strong>适应性：</strong>智能体能够根据环境反馈学习和调整自己的策略。</p>
-
-<h2>实际应用</h2>
-
-<p>在软件开发领域，AI 智能体已经开始展现威力。它们能够自主地分析代码、识别 bug、提出修复方案，甚至能够完成整个功能的实现。在科研领域，AI 智能体正在帮助研究人员进行文献综述、实验设计和数据分析。</p>
-
-<p>这个趋势预示着一个新时代的到来——AI 将从被动的工具转变为主动的合作者。</p>
+            {{content}}
           </div>
 
           <footer class="post-footer">
             <div class="post-tags">
-              <span class="post-tag">AI</span><span class="post-tag">智能体</span>
+              {{tagsDisplay}}
             </div>
           </footer>
         </article>
+
+        <!-- Navigation -->
+        <nav class="post-nav">
+          {{prevPost}}
+          {{nextPost}}
+        </nav>
       </section>
     </main>
 

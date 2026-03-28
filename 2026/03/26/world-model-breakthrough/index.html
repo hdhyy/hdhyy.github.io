@@ -2,69 +2,118 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>世界模型突破：Yann LeCun 的新里程碑 - Hardy Augustus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/style.css">
+  <meta name="description" content="世界模型突破：Yann LeCun 的新里程碑">
+  <title>世界模型突破：Yann LeCun 的新里程碑 - Hardy Augustus</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/modern.css">
+  <link rel="stylesheet" href="/css/post.css">
+  <script src="/js/app.js" defer></script>
 </head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-        <div id="banner"></div>
-        <div id="header-inner" class="inner">
-          <nav id="main-nav">
-            <a class="main-nav-link" href="/">Home</a>
-            <a class="main-nav-link" href="/archives">Archives</a>
-          </nav>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <h1 class="logo"><a href="/">Hardy's Blog</a></h1>
+          <p class="tagline">Thoughts on technology and life</p>
         </div>
-        <div id="header-outer" class="outer">
-          <div id="header-title" class="inner">
-            <h1 id="logo-wrap"><a href="/" id="logo">Hardy Augustus</a></h1>
-            <h2 id="subtitle-wrap"><a href="/" id="subtitle">Simple is better than complex.</a></h2>
-          </div>
+        <div class="header-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
-      </header>
-
-      <div class="outer">
-        <section id="main">
-          <article class="article article-type-post">
-            <div class="article-meta">2026-03-26</div>
-            <div class="article-inner">
-              <header class="article-header">
-                <h1 class="article-title">世界模型突破：Yann LeCun 的新里程碑</h1>
-              </header>
-              <div class="article-entry">
-                <p>2026年3月11日，AI 领域的先驱 Yann LeCun 为其“世界模型”初创公司 AMI 筹集了 10 亿美元。这标志着 AI 技术路径的重大转折：从单纯的预测下一个词（LLM）转向理解物理规律和预测环境变化（World Models）。</p>
-                <p>AMI 的目标是让 AI 能够像人类一样，通过观察和交互来理解世界的运行方式。这对于机器人技术、自动驾驶以及更高级的逻辑推理至关重要。LeCun 认为，只有当 AI 拥有了真正的世界模型，它才能实现真正的自主规划和决策，而不仅仅是基于概率的模仿。</p>
-                <blockquote>世界模型是通往通用人工智能（AGI）的必经之路。</blockquote>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <aside id="sidebar">
-          <div class="widget-wrap">
-            <h3 class="widget-title">Recent Posts</h3>
-            <div class="widget">
-              <ul>
-                <li><a href="/2026/03/27/polarquant-compression/">PolarQuant 与 QJL 压缩技术</a></li>
-                <li><a href="/2026/03/26/world-model-breakthrough/">Yann LeCun 世界模型突破</a></li>
-                <li><a href="/2026/03/25/agentic-ai-era/">智能体时代的到来</a></li>
-                <li><a href="/2026/02/11/developers-embrace-ai-era/">开发者如何拥抱 AI 时代</a></li>
-              </ul>
-            </div>
-          </div>
-        </aside>
       </div>
+    </header>
 
-      <footer id="footer">
-        <div class="outer">
-          <div id="footer-info" class="inner">
-            &copy; 2019-2026 Hardy Augustus
+    <!-- Main Content -->
+    <main class="container post-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Navigation -->
+        <div class="widget">
+          <h3 class="widget-title">Navigation</h3>
+          <ul class="nav-list">
+            <li><a href="/">← Back to Home</a></li>
+            <li><a href="/archives">Archives</a></li>
+          </ul>
+        </div>
+
+        <!-- Tags -->
+        <div class="widget">
+          <h3 class="widget-title">Tags</h3>
+          <div class="tags-cloud">
+            <span class="tag">AI</span><span class="tag">机器学习</span>
           </div>
         </div>
-      </footer>
-    </div>
+
+        <!-- About -->
+        <div class="widget">
+          <h3 class="widget-title">About</h3>
+          <p class="about-text">
+            A software engineer passionate about AI, distributed systems, and elegant code design.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Post Content -->
+      <section class="post">
+        <article class="post-article">
+          <header class="post-header">
+            <h1 class="post-title">世界模型突破：Yann LeCun 的新里程碑</h1>
+            <div class="post-meta">
+              <time datetime="2026-03-26">March 26, 2026</time>
+            </div>
+          </header>
+
+          <div class="post-content">
+            <p>2026年3月11日，AI 领域的先驱 Yann LeCun 为其"世界模型"初创公司 AMI 筹集了 10 亿美元。这标志着 AI 技术路径的重大转折：从单纯的预测下一个词（LLM）转向理解物理规律。</p>
+
+<p>Yann LeCun 一直倡导"世界模型"的概念——让 AI 系统能够建立对物理世界的深层理解，而不仅仅是进行统计预测。这种能力对于实现通用人工智能（AGI）至关重要。</p>
+
+<blockquote>理解世界的物理规律，是通向真正智能的必经之路。</blockquote>
+
+<h2>世界模型的意义</h2>
+
+<p>传统的大语言模型虽然在文本生成和理解上表现出色，但它们本质上是在进行统计学意义上的"下一个词预测"。这种方法在处理需要因果推理、物理直觉或长期规划的任务时，往往显得力不从心。</p>
+
+<p>世界模型则试图让 AI 系统建立对物理世界的真实理解——包括物体的运动规律、重力、碰撞等基本物理现象。这样的系统将能够进行更深层的推理和规划。</p>
+
+<h2>技术挑战</h2>
+
+<p>构建真正的世界模型面临着巨大的技术挑战。需要大规模的物理模拟数据、新的神经网络架构，以及全新的训练方法。AMI 的成立和融资，正是为了应对这些挑战。</p>
+          </div>
+
+          <footer class="post-footer">
+            <div class="post-tags">
+              <span class="post-tag">AI</span><span class="post-tag">机器学习</span>
+            </div>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2019-2026 Hardy Augustus. All rights reserved.</p>
+        <p>Powered by <a href="https://github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </footer>
   </div>
 </body>
 </html>

@@ -2,69 +2,118 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>PolarQuant 与 QJL：AI 推理的高效压缩技术 - Hardy Augustus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/style.css">
+  <meta name="description" content="PolarQuant 与 QJL：AI 推理的高效压缩技术">
+  <title>PolarQuant 与 QJL：AI 推理的高效压缩技术 - Hardy Augustus</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/modern.css">
+  <link rel="stylesheet" href="/css/post.css">
+  <script src="/js/app.js" defer></script>
 </head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-        <div id="banner"></div>
-        <div id="header-inner" class="inner">
-          <nav id="main-nav">
-            <a class="main-nav-link" href="/">Home</a>
-            <a class="main-nav-link" href="/archives">Archives</a>
-          </nav>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <h1 class="logo"><a href="/">Hardy's Blog</a></h1>
+          <p class="tagline">Thoughts on technology and life</p>
         </div>
-        <div id="header-outer" class="outer">
-          <div id="header-title" class="inner">
-            <h1 id="logo-wrap"><a href="/" id="logo">Hardy Augustus</a></h1>
-            <h2 id="subtitle-wrap"><a href="/" id="subtitle">Simple is better than complex.</a></h2>
-          </div>
+        <div class="header-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
-      </header>
-
-      <div class="outer">
-        <section id="main">
-          <article class="article article-type-post">
-            <div class="article-meta">2026-03-27</div>
-            <div class="article-inner">
-              <header class="article-header">
-                <h1 class="article-title">PolarQuant 与 QJL：AI 推理的高效压缩技术</h1>
-              </header>
-              <div class="article-entry">
-                <p>2026年3月26日，Google 发布了 AI 推理领域的重大技术进展——PolarQuant 与 QJL。这项技术利用先进的压缩算法，极大地减少了大型 AI 模型在推理过程中的内存占用和计算消耗，同时保持了模型的高性能。</p>
-                <p>这意味着在智能手机、边缘设备等硬件上运行高性能 AI 模型将变得更加普及。PolarQuant 的核心在于对模型参数的极低位量化，而 QJL 则优化了推理过程中的数据传输。这不仅提升了 AI 应用的响应速度，也为未来的个性化 AI 提供了坚实的技术支撑。</p>
-                <blockquote>高效压缩将 AI 从云端实验室带向每一个边缘终端。</blockquote>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <aside id="sidebar">
-          <div class="widget-wrap">
-            <h3 class="widget-title">Recent Posts</h3>
-            <div class="widget">
-              <ul>
-                <li><a href="/2026/03/27/polarquant-compression/">PolarQuant 与 QJL 压缩技术</a></li>
-                <li><a href="/2026/03/26/world-model-breakthrough/">Yann LeCun 世界模型突破</a></li>
-                <li><a href="/2026/03/25/agentic-ai-era/">智能体时代的到来</a></li>
-                <li><a href="/2026/02/11/developers-embrace-ai-era/">开发者如何拥抱 AI 时代</a></li>
-              </ul>
-            </div>
-          </div>
-        </aside>
       </div>
+    </header>
 
-      <footer id="footer">
-        <div class="outer">
-          <div id="footer-info" class="inner">
-            &copy; 2019-2026 Hardy Augustus
+    <!-- Main Content -->
+    <main class="container post-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Navigation -->
+        <div class="widget">
+          <h3 class="widget-title">Navigation</h3>
+          <ul class="nav-list">
+            <li><a href="/">← Back to Home</a></li>
+            <li><a href="/archives">Archives</a></li>
+          </ul>
+        </div>
+
+        <!-- Tags -->
+        <div class="widget">
+          <h3 class="widget-title">Tags</h3>
+          <div class="tags-cloud">
+            <span class="tag">AI</span><span class="tag">技术</span>
           </div>
         </div>
-      </footer>
-    </div>
+
+        <!-- About -->
+        <div class="widget">
+          <h3 class="widget-title">About</h3>
+          <p class="about-text">
+            A software engineer passionate about AI, distributed systems, and elegant code design.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Post Content -->
+      <section class="post">
+        <article class="post-article">
+          <header class="post-header">
+            <h1 class="post-title">PolarQuant 与 QJL：AI 推理的高效压缩技术</h1>
+            <div class="post-meta">
+              <time datetime="2026-03-27">March 27, 2026</time>
+            </div>
+          </header>
+
+          <div class="post-content">
+            <p>2026年3月26日，Google 发布了 AI 推理领域的重大技术进展——PolarQuant 与 QJL。这项技术利用先进的压缩算法，极大地减少了大型 AI 模型在推理过程中的内存占用和计算消耗，同时保持了模型的高性能。</p>
+
+<p>这意味着在智能手机、边缘设备等硬件上运行高性能 AI 模型将变得更加普及。PolarQuant 的核心在于对模型参数的极低位量化，而 QJL 则优化了推理过程中的数据传输。这不仅提升了 AI 应用的响应速度，也为未来的个性化 AI 提供了坚实的技术支撑。</p>
+
+<blockquote>高效压缩将 AI 从云端实验室带向每一个边缘终端。</blockquote>
+
+<h2>技术细节</h2>
+
+<p>PolarQuant 采用了极端量化策略，将模型权重量化至 2-4 比特，相比传统的 8 比特量化，进一步减少了 50-75% 的模型大小。同时，通过自适应的量化参数，保证了量化后模型的精度损失在可接受范围内。</p>
+
+<p>QJL（Quantized Jump Learning）则是一种新型的推理优化技术，通过智能跳过不必要的计算，进一步提升推理效率。</p>
+
+<h2>应用前景</h2>
+
+<p>这项技术的发布标志着 AI 模型的边缘计算时代即将到来。未来，用户将能够在本地设备上运行强大的 AI 模型，无需依赖云端服务，这将大大降低延迟，提升隐私保护。</p>
+          </div>
+
+          <footer class="post-footer">
+            <div class="post-tags">
+              <span class="post-tag">AI</span><span class="post-tag">技术</span>
+            </div>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2019-2026 Hardy Augustus. All rights reserved.</p>
+        <p>Powered by <a href="https://github.com" target="_blank">GitHub Pages</a></p>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
