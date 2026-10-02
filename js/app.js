@@ -30,6 +30,17 @@ class BlogApp {
           post.tags.forEach(tag => this.allTags.add(tag));
         }
       });
+    } else {
+      // The current generator emits HTML cards, not postsData JSON.
+      // Keep these nodes intact so source text is never reinterpreted as HTML.
+      this.staticCards = Array.from(document.querySelectorAll('#postsContainer .post-card'));
+      this.posts = this.staticCards.map(card => ({
+        title: card.querySelector('.post-title')?.textContent.trim() || '',
+        summary: card.querySelector('.post-summary')?.textContent.trim() || '',
+        date: card.querySelector('.post-date')?.textContent.trim() || '',
+        tags: Array.from(card.querySelectorAll('.post-tag')).map(tag => tag.textContent.trim())
+      }));
+      this.posts.forEach(post => post.tags.forEach(tag => this.allTags.add(tag)));
     }
   }
 
@@ -104,6 +115,14 @@ class BlogApp {
     if (!container) return;
 
     const filteredPosts = this.getFilteredPosts();
+    if (this.staticCards) {
+      const selected = new Set(filteredPosts);
+      this.staticCards.forEach((card, index) => {
+        card.style.display = selected.has(this.posts[index]) ? '' : 'none';
+      });
+      if (noResults) noResults.style.display = filteredPosts.length ? 'none' : 'block';
+      return;
+    }
 
     if (filteredPosts.length === 0) {
       container.innerHTML = '';
