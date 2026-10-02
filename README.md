@@ -145,3 +145,13 @@ MIT License
 **访问博客**: https://hdhyy.github.io/
 
 **最后更新**: 2026-03-28
+
+## 每日資訊發布（2026-10-02 修復）
+
+- 每天 UTC 08:00（北京時間 16:00）執行；GitHub 排程可能延遲。也可在 Actions → Daily AI News 手動執行。
+- Node.js 24；`cd blog-generator && npm ci && npm test && npm run news`。
+- Hacker News 收錄近 48 小時提交，arXiv 最長回看 7 天。來源日期保留原值；HN 提交時間不等於原文發布時間。不生成推測性摘要。
+- 來源不可用時在日報中註明；沒有近期有效來源時流程失敗，不發空白日報。
+- 每期路徑為 `/YYYY/MM/DD/ai-news/`。每日生成器只增補日報和首頁日報區塊，保留既有歷史文章。
+- 工作流先測試、抓取、生成及保存，再上傳純靜態網站 Pages artifact 並直接部署，不依賴機器人 push 觸發 Pages。
+- 使用 repository-scoped GITHUB_TOKEN，無需新增第三方密鑰。公共倉庫長期無活動可能停用排程，請檢查 Actions 的啟用狀態。

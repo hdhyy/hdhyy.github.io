@@ -1,240 +1,48 @@
 #!/usr/bin/env node
-
-/**
- * AI 新闻爬虫与总结发布系统
- * 每天自动抓取 AI 领域的 Top 10 新闻并发布总结文章
- */
-
-const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
-
+'use strict';
+async function getSource(url) {
+  const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+  if (!response.ok) throw new Error(`Source HTTP ${response.status}`);
+  const text = await response.text();
+  return { data: url.startsWith('https://hn.algolia.com/') ? JSON.parse(text) : text };
+}
+const cheerio = require('cheerio');
+const fs = require('node:fs');
+const path = require('node:path');
+const aiPattern = /\b(ai|artificial intelligence|machine learning|deep learning|llm|gpt|transformers?|agents?|neural|chatgpt|claude|gemini|openai|anthropic)\b/i;
+const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
+const safeUrl = value => { try { const u = new URL(value); return /^https?:$/.test(u.protocol) ? u.href : null; } catch { return null; } };
+const md = value => clean(value).replace(/[\\`*_{}\[\]<>]/g, '\\$&');
 class AINewsCrawler {
-  constructor() {
-    this.newsAPIs = [
-      {
-        name: 'HackerNews',
-        url: 'https://hacker-news.firebaseio.com/v0',
-        parser: this.parseHackerNews.bind(this)
-      },
-      {
-        name: 'ArXiv',
-        url: 'http://export.arxiv.org/api/query',
-        parser: this.parseArXiv.bind(this)
-      }
-    ];
-  }
-
-  // 从 HackerNews 获取 AI 相关新闻
+  constructor({ now = new Date(), get = getSource } = {}) { this.now = now; this.get = get; this.warnings = []; }
+  async request(url, params) { return (await this.get(`${url}?${new URLSearchParams(params)}`, { timeout: 20000 })).data; }
   async parseHackerNews() {
-    try {
-      // 获取最新的 story IDs
-      const topStoriesRes = await axios.get(`${this.newsAPIs[0].url}/topstories.json`);
-      const topStoryIds = topStoriesRes.data.slice(0, 30);
-
-      const stories = [];
-      for (const id of topStoryIds.slice(0, 10)) {
-        const storyRes = await axios.get(`${this.newsAPIs[0].url}/item/${id}.json`);
-        const story = storyRes.data;
-        
-        // 筛选 AI 相关的新闻
-        if (story && story.title && this.isAIRelated(story.title)) {
-          stories.push({
-            title: story.title,
-            url: story.url || `https://news.ycombinator.com/item?id=${id}`,
-            source: 'HackerNews',
-            score: story.score || 0,
-            date: new Date(story.time * 1000).toISOString()
-          });
-        }
-      }
-      return stories;
-    } catch (error) {
-      console.error('Error fetching from HackerNews:', error.message);
-      return [];
-    }
+    const data = await this.request('https://hn.algolia.com/api/v1/search_by_date', { tags: 'story', query: 'AI', hitsPerPage: 100, numericFilters: `created_at_i>=${Math.floor(this.now.getTime()/1000)-172800}` });
+    return data.hits.filter(x => aiPattern.test(x.title || '')).map(x => ({ title: clean(x.title), url: safeUrl(x.url) || `https://news.ycombinator.com/item?id=${x.objectID}`, source: 'Hacker News', date: x.created_at, score: x.points || 0, dateLabel: 'HN 提交時間' }));
   }
-
-  // 从 ArXiv 获取 AI 论文
   async parseArXiv() {
-    try {
-      const response = await axios.get(this.newsAPIs[1].url, {
-        params: {
-          search_query: 'cat:cs.AI AND submittedDate:[202603010000 TO 202603312359]',
-          start: 0,
-          max_results: 10,
-          sortBy: 'submittedDate',
-          sortOrder: 'descending'
-        }
-      });
-
-      const papers = [];
-      const entries = response.data.match(/<entry>[\s\S]*?<\/entry>/g) || [];
-      
-      entries.forEach(entry => {
-        const titleMatch = entry.match(/<title>([^<]+)<\/title>/);
-        const linkMatch = entry.match(/<link href="([^"]+)" rel="alternate"/);
-        const summaryMatch = entry.match(/<summary>([^<]+)<\/summary>/);
-
-        if (titleMatch && linkMatch) {
-          papers.push({
-            title: titleMatch[1],
-            url: linkMatch[1],
-            source: 'ArXiv',
-            summary: summaryMatch ? summaryMatch[1] : '',
-            date: new Date().toISOString()
-          });
-        }
-      });
-
-      return papers;
-    } catch (error) {
-      console.error('Error fetching from ArXiv:', error.message);
-      return [];
-    }
+    const xml = await this.request('https://export.arxiv.org/api/query', { search_query: 'cat:cs.AI', start: 0, max_results: 20, sortBy: 'submittedDate', sortOrder: 'descending' });
+    const $ = cheerio.load(xml, { xmlMode: true });
+    return $('entry').toArray().map(el => ({ title: clean($(el).find('title').text()), url: safeUrl($(el).find('id').text()), source: 'arXiv（未經同行評審）', date: $(el).find('published').text(), dateLabel: '論文首次發布時間', score: 0 }));
   }
-
-  // 判断是否与 AI 相关
-  isAIRelated(text) {
-    const aiKeywords = [
-      'AI', 'artificial intelligence', 'machine learning', 'deep learning',
-      'neural network', 'LLM', 'GPT', 'transformer', 'agent', 'model',
-      'algorithm', 'data science', 'NLP', 'computer vision', 'reinforcement learning'
-    ];
-    
-    const lowerText = text.toLowerCase();
-    return aiKeywords.some(keyword => lowerText.includes(keyword.toLowerCase()));
+  selectNews(items) {
+    const now = this.now.getTime();
+    return Array.from(new Map(items.filter(x => x.title && safeUrl(x.url) && Number.isFinite(Date.parse(x.date)) && Date.parse(x.date) <= now && Date.parse(x.date) >= now - 7*86400000).map(x => [x.url, x])).values()).sort((a,b) => (b.score-a.score) || (Date.parse(b.date)-Date.parse(a.date))).slice(0,10);
   }
-
-  // 获取所有新闻
   async fetchAllNews() {
-    console.log('🔍 Fetching AI news from multiple sources...\n');
-    
-    let allNews = [];
-    
-    // 从 HackerNews 获取
-    const hackerNewsStories = await this.parseHackerNews();
-    allNews = allNews.concat(hackerNewsStories);
-    
-    // 从 ArXiv 获取
-    const arxivPapers = await this.parseArXiv();
-    allNews = allNews.concat(arxivPapers);
-
-    // 去重并排序
-    const uniqueNews = Array.from(
-      new Map(allNews.map(item => [item.title, item])).values()
-    );
-    
-    const sortedNews = uniqueNews
-      .sort((a, b) => (b.score || 0) - (a.score || 0))
-      .slice(0, 10);
-
-    return sortedNews;
+    const results = await Promise.allSettled([this.parseHackerNews(), this.parseArXiv()]);
+    const items = [];
+    results.forEach((r,i) => { if(r.status === 'fulfilled') items.push(...r.value); else this.warnings.push(`${['Hacker News','arXiv'][i]} 本次未能取得資料`); });
+    const news = this.selectNews(items);
+    if (!news.length) throw new Error('No recent verifiable news found; refusing to publish an empty edition.');
+    return news;
   }
-
-  // 生成总结文章
   generateSummaryArticle(news) {
-    const today = new Date();
-    const dateStr = today.toISOString().split('T')[0];
-    const formattedDate = today.toLocaleDateString('zh-CN', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    });
-
-    let newsContent = '';
-    news.forEach((item, index) => {
-      newsContent += `\n### ${index + 1}. ${item.title}\n\n`;
-      newsContent += `**来源**: ${item.source}  \n`;
-      newsContent += `**链接**: [阅读原文](${item.url})\n\n`;
-      if (item.summary) {
-        newsContent += `**摘要**: ${item.summary}\n\n`;
-      }
-    });
-
-    const content = `---
-title: AI 新闻周报 - ${formattedDate}
-date: ${dateStr}
-tags: ["AI新闻", "周报", "行业动态"]
-summary: 本周 AI 领域的重要新闻和研究进展总结。涵盖大语言模型、机器学习、计算机视觉等多个领域的最新动态。
----
-
-## 本周 AI 新闻 Top 10
-
-本周为您精选了 AI 领域最重要的 10 条新闻和研究进展。
-${newsContent}
-
-## 总体趋势
-
-本周 AI 领域的主要趋势包括：
-
-1. **大语言模型的持续演进** - 各大公司继续推出更强大的语言模型
-2. **多模态 AI 的应用拓展** - 视觉-语言模型在更多领域得到应用
-3. **AI 安全与伦理的重视** - 业界对 AI 安全性的关注度持续提升
-4. **边缘计算与 AI 的结合** - 轻量级模型在移动设备上的应用增加
-5. **开源 AI 工具的繁荣** - 越来越多高质量的开源 AI 项目涌现
-
-## 推荐阅读
-
-- 关注最新的 ArXiv 论文发布
-- 订阅主要 AI 研究机构的博客
-- 参与 AI 社区的讨论和分享
-
----
-
-**下期预告**: 下周我们将继续为您带来 AI 领域的最新动态和深度分析。
-`;
-
-    return {
-      filename: `ai-news-${dateStr}.md`,
-      content: content,
-      date: dateStr
-    };
+    const date = this.now.toISOString().slice(0,10);
+    const body = news.map((x,i) => `### ${i+1}. ${md(x.title)}\n\n來源：${md(x.source)}  \n${x.dateLabel}：${new Date(x.date).toISOString()}  \n[閱讀來源](<${x.url}>)\n`).join('\n');
+    return { date, filename: `${date.replaceAll('-','/')}/ai-news/index.md`, content: `---\ntitle: AI 資訊日報 - ${date}\ndate: ${date}\ntags: ["AI新聞", "日報"]\nsummary: ${news.length} 則近期 AI 資訊與研究連結；保留來源時間，供核對原文。\n---\n\n## AI 資訊日報\n\n整理時間：${this.now.toISOString()}。本期收錄 ${news.length} 則；HN 檢索最近 48 小時的提交，論文最長回看 7 天。HN 提交時間不代表原文發布時間。以下為來源標題與連結，未生成未經核實的新聞摘要。\n\n${this.warnings.length ? `資料完整性：${this.warnings.join('；')}。\n\n` : ''}${body}` };
   }
-
-  // 保存文章
-  saveArticle(article, contentDir) {
-    const filepath = path.join(contentDir, article.filename);
-    fs.writeFileSync(filepath, article.content);
-    console.log(`✓ Saved: ${article.filename}`);
-    return filepath;
-  }
-
-  // 主流程
-  async run(contentDir) {
-    try {
-      const news = await this.fetchAllNews();
-      
-      if (news.length === 0) {
-        console.log('⚠️  No AI news found today');
-        return null;
-      }
-
-      console.log(`✓ Found ${news.length} AI news items\n`);
-      
-      const article = this.generateSummaryArticle(news);
-      const filepath = this.saveArticle(article, contentDir);
-      
-      console.log(`\n✅ AI news summary published!`);
-      return filepath;
-    } catch (error) {
-      console.error('❌ Error:', error.message);
-      return null;
-    }
-  }
+  async run(contentDir) { const article = this.generateSummaryArticle(await this.fetchAllNews()); const file = path.join(contentDir,article.filename); fs.mkdirSync(path.dirname(file),{recursive:true}); fs.writeFileSync(file,article.content); return file; }
 }
-
-// 导出爬虫类
 module.exports = AINewsCrawler;
-
-// 如果直接运行此文件
-if (require.main === module) {
-  const crawler = new AINewsCrawler();
-  const contentDir = path.join(__dirname, '../content');
-  
-  if (!fs.existsSync(contentDir)) {
-    fs.mkdirSync(contentDir, { recursive: true });
-  }
-
-  crawler.run(contentDir);
-}
+if (require.main === module) new AINewsCrawler().run(path.join(__dirname,'../content')).then(file => console.log(`Saved ${file}`)).catch(error => { console.error(error.message); process.exitCode=1; });

@@ -1,0 +1,57 @@
+name: Daily AI News
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths: ['.github/workflows/daily-news.yml', 'blog-generator/**']
+permissions:
+  contents: read
+concurrency:
+  group: daily-ai-news
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: blog-generator/package-lock.json
+      - run: npm ci
+        working-directory: blog-generator
+      - run: npm test
+        working-directory: blog-generator
+      - run: npm run news
+        working-directory: blog-generator
+      - name: Save editions and generated pages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add blog-generator/content/ 20*/ index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish daily AI news'
+            git push
+          fi
+      - run: node blog-generator/scripts/stage-site.js
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

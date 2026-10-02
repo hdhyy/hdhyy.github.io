@@ -78,7 +78,8 @@ function generatePost(markdownFile) {
 
   // 生成输出路径
   const relativePath = path.relative(CONFIG.contentDir, markdownFile);
-  const dirName = path.dirname(relativePath);
+  const parentDir = path.dirname(relativePath);
+  const dirName = parentDir === '.' ? path.basename(relativePath, '.md') : parentDir;
   const outputPath = path.join(CONFIG.outputDir, dirName, 'index.html');
 
   ensureDir(path.dirname(outputPath));
