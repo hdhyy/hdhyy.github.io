@@ -7,7 +7,7 @@ summary: 10 則近期 AI 資訊與研究連結；保留來源時間，供核對�
 
 ## AI 資訊日報
 
-整理時間：2026-10-02T11:10:50.728Z。本期收錄 10 則；HN 檢索最近 48 小時的提交，論文最長回看 7 天。HN 提交時間不代表原文發布時間。以下為來源標題與連結，未生成未經核實的新聞摘要。
+整理時間：2026-10-02T11:14:23.314Z。本期收錄 10 則；HN 檢索最近 48 小時的提交，論文最長回看 7 天。HN 提交時間不代表原文發布時間。以下為來源標題與連結，未生成未經核實的新聞摘要。
 
 ### 1. Don't Be Fooled by this Summer of AI Hype
 
@@ -45,26 +45,26 @@ HN 提交時間：2026-10-02T06:18:31.000Z
 HN 提交時間：2026-10-02T01:20:32.000Z  
 [閱讀來源](<https://www.astralcodexten.com/p/our-ai-midwife>)
 
-### 7. Show HN: Premortem – AI agents that red-team your startup idea
-
-來源：Hacker News  
-HN 提交時間：2026-10-01T20:30:02.000Z  
-[閱讀來源](<https://premortem.site/>)
-
-### 8. Trump renaming AI to SI is making his wife's home country a little richer
+### 7. Trump renaming AI to SI is making his wife's home country a little richer
 
 來源：Hacker News  
 HN 提交時間：2026-10-02T08:40:39.000Z  
 [閱讀來源](<https://www.neowin.net/news/trump-renaming-ai-to-super-intelligence-is-making-his-wifes-home-country-a-little-richer/>)
 
-### 9. Best-of-Agent-Harnesses – Ranked list of 167 AI agent harnesses, rescored weekly
+### 8. Best-of-Agent-Harnesses – Ranked list of 167 AI agent harnesses, rescored weekly
 
 來源：Hacker News  
 HN 提交時間：2026-10-02T01:57:56.000Z  
 [閱讀來源](<https://github.com/ryanalberts/best-of-agent-harnesses>)
 
-### 10. With most information hidden, the game Stratego had stumped AI–until now
+### 9. With most information hidden, the game Stratego had stumped AI–until now
 
 來源：Hacker News  
 HN 提交時間：2026-10-01T20:37:52.000Z  
 [閱讀來源](<https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/>)
+
+### 10. $250M Apple AI Settlement – iPhone 15/16 Users Can Claim $25 to $95 per Device
+
+來源：Hacker News  
+HN 提交時間：2026-10-02T07:06:17.000Z  
+[閱讀來源](<https://openclassactions.com/settlements/false-advertising/apple-intelligence-siri-false-advertising-class-action-settlement.php>)
