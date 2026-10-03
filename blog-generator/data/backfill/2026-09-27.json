@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-27",
+  "retrievedAt": "2026-10-03T09:45:33.658Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609270000+TO+202609272359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "UOPD: Uncertainty-Aware Intervention for On-Policy Distillation of Multi-Turn Agents",
+      "url": "https://arxiv.org/abs/2609.34036v1",
+      "published": "2026-09-27T23:57:28Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "ADPTNet: Adaptive with Prescriptive Timescales Non-Linear SSM for Sequence Modelling",
+      "url": "https://arxiv.org/abs/2609.34034v1",
+      "published": "2026-09-27T23:56:14Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Uncovering shortcut learning in audio classifiers by discovering recurring concepts in temporal explanations",
+      "url": "https://arxiv.org/abs/2609.34030v1",
+      "published": "2026-09-27T23:52:15Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

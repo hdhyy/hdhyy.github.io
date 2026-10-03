@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-12",
+  "retrievedAt": "2026-10-03T09:44:43.852Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609120000+TO+202609122359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Data-free On-policy Distillation",
+      "url": "https://arxiv.org/abs/2609.14193v2",
+      "published": "2026-09-12T23:51:35Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Entropy-Punctured Bloom Filters for Memory-Efficient Machine Learning",
+      "url": "https://arxiv.org/abs/2609.14187v1",
+      "published": "2026-09-12T23:37:46Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Bi-Level Routing and Sparse Spatial Attention based Multi-View BEV 3D Object Detection for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2609.14185v1",
+      "published": "2026-09-12T23:35:28Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

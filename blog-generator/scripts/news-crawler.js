@@ -42,7 +42,7 @@ class AINewsCrawler {
     const body = news.map((x,i) => `### ${i+1}. ${md(x.title)}\n\n來源：${md(x.source)}  \n${x.dateLabel}：${new Date(x.date).toISOString()}  \n[閱讀來源](<${x.url}>)\n`).join('\n');
     return { date, filename: `${date.replaceAll('-','/')}/ai-news/index.md`, content: `---\ntitle: AI 資訊日報 - ${date}\ndate: ${date}\ntags: ["AI新聞", "日報"]\nsummary: ${news.length} 則近期 AI 資訊與研究連結；保留來源時間，供核對原文。\n---\n\n## AI 資訊日報\n\n整理時間：${this.now.toISOString()}。本期收錄 ${news.length} 則；HN 檢索最近 48 小時的提交，論文最長回看 7 天。HN 提交時間不代表原文發布時間。以下為來源標題與連結，未生成未經核實的新聞摘要。\n\n${this.warnings.length ? `資料完整性：${this.warnings.join('；')}。\n\n` : ''}${body}` };
   }
-  async run(contentDir) { const article = this.generateSummaryArticle(await this.fetchAllNews()); const file = path.join(contentDir,article.filename); fs.mkdirSync(path.dirname(file),{recursive:true}); fs.writeFileSync(file,article.content); return file; }
+  async run(contentDir) { const existing = path.join(contentDir, this.now.toISOString().slice(0,10).replaceAll('-','/'), 'ai-news/index.md'); if (fs.existsSync(existing)) { console.log('Preserving existing daily edition'); return existing; } const article = this.generateSummaryArticle(await this.fetchAllNews()); const file = path.join(contentDir,article.filename); fs.mkdirSync(path.dirname(file),{recursive:true}); fs.writeFileSync(file,article.content); return file; }
 }
 module.exports = AINewsCrawler;
 if (require.main === module) new AINewsCrawler().run(path.join(__dirname,'../content')).then(file => console.log(`Saved ${file}`)).catch(error => { console.error(error.message); process.exitCode=1; });

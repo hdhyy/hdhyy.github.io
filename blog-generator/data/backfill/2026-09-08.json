@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-08",
+  "retrievedAt": "2026-10-03T09:44:30.265Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609080000+TO+202609082359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "AlphaGenome Atlas: a high-resolution map of human DNA",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphagenome-atlas/",
+      "published": "2026-09-08",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 08, 2026"
+    },
+    {
+      "title": "Introducing Muse: The World’s First Personal AI Agent Built for Everyone",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "published": "2026-09-08",
+      "source": "Meta",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 8, 2026"
+    },
+    {
+      "title": "Adaptive Distributed Physical-Layer Authentication and Attack Detection in 6G Non-Terrestrial Networks via Causal Meta-Learning",
+      "url": "https://arxiv.org/abs/2609.09511v1",
+      "published": "2026-09-08T22:53:32Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Assessment of Non-Institutional AI Tool Usage Among Clinicians",
+      "url": "https://arxiv.org/abs/2609.11990v1",
+      "published": "2026-09-08T22:47:34Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "From Fixed Keys to Readable Schemas: Small Language Models for Vehicle Agent Function Calls",
+      "url": "https://arxiv.org/abs/2609.09476v1",
+      "published": "2026-09-08T21:46:35Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

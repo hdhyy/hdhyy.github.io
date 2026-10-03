@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-18",
+  "retrievedAt": "2026-10-03T09:45:03.730Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609180000+TO+202609182359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Partnering with Accenture on embedded evaluation",
+      "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+      "published": "2026-09-18",
+      "source": "Anthropic",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 18, 2026"
+    },
+    {
+      "title": "Math2Visual-X: A Modular Framework for Pedagogically Aligned Lower-Primary Math Visuals Generation",
+      "url": "https://arxiv.org/abs/2609.22647v1",
+      "published": "2026-09-18T23:47:19Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Text, Pixels, or Both? Evaluating Input Representations for Multimodal Document QA",
+      "url": "https://arxiv.org/abs/2609.22628v2",
+      "published": "2026-09-18T22:26:49Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Splitting Documents at Lower Cost: Multi-Split Boundary Decisions for LLM-Based Page Stream Segmentation",
+      "url": "https://arxiv.org/abs/2609.22620v2",
+      "published": "2026-09-18T22:13:43Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

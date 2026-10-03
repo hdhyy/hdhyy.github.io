@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-09",
+  "retrievedAt": "2026-10-03T09:44:33.716Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609090000+TO+202609092359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "The AI policy window is open. We need to act.",
+      "url": "https://openai.com/index/ai-policy-window/",
+      "published": "2026-09-09",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 9, 2026"
+    },
+    {
+      "title": "ReactHuman: A Physics-Grounded Benchmark for Human-Like Reactive Decision-Making in Embodied Multimodal LLMs",
+      "url": "https://arxiv.org/abs/2609.10895v1",
+      "published": "2026-09-09T22:56:21Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Does Linguistic Structure Enrichment Enhance Coherence Assessment? Not With Current Architectures",
+      "url": "https://arxiv.org/abs/2609.10893v1",
+      "published": "2026-09-09T22:53:50Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "DriftNet: A Dual-Head Trajectory Transformer for Detecting and Localizing Prompt Injection in LLM Agents",
+      "url": "https://arxiv.org/abs/2609.10892v1",
+      "published": "2026-09-09T22:52:23Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

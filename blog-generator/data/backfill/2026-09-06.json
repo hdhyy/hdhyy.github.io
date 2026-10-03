@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-06",
+  "retrievedAt": "2026-10-03T09:44:23.657Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609060000+TO+202609062359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Research acceleration: The view inside OpenAI",
+      "url": "https://openai.com/index/research-acceleration-view-inside-openai/",
+      "published": "2026-09-06",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 6, 2026"
+    },
+    {
+      "title": "AutoLexSteer: Automatic Contrast Construction for Lexical Activation Steering",
+      "url": "https://arxiv.org/abs/2609.06879v1",
+      "published": "2026-09-06T23:54:05Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Novel Methods for Catheter and Guidewire Segmentation in X-ray Fluoroscopy under a Federated Learning Setting",
+      "url": "https://arxiv.org/abs/2609.06876v1",
+      "published": "2026-09-06T23:44:27Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Characterizing Contention-Induced Reliability Collapse in KV-Cache Timing Side Channels for Multi-Tenant LLM Serving",
+      "url": "https://arxiv.org/abs/2609.06853v1",
+      "published": "2026-09-06T21:56:29Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

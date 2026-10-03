@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-25",
+  "retrievedAt": "2026-10-03T09:45:26.967Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609250000+TO+202609252359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Introducing the new Copilot with Home, Code and Autopilot",
+      "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "published": "2026-09-25",
+      "source": "Microsoft",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 25, 2026"
+    },
+    {
+      "title": "GameBoyWorlds: A Testbed for Self-Improvement in Embodied Video Games",
+      "url": "https://arxiv.org/abs/2609.32093v1",
+      "published": "2026-09-25T23:55:38Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "On Evaluating and Improving Conversational Agents in Production",
+      "url": "https://arxiv.org/abs/2609.32092v1",
+      "published": "2026-09-25T23:55:33Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Memory as Middleware for Self-Improving AI Agents",
+      "url": "https://arxiv.org/abs/2609.32091v1",
+      "published": "2026-09-25T23:54:58Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

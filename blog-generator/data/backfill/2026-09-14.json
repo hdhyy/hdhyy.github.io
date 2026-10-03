@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-14",
+  "retrievedAt": "2026-10-03T09:44:50.482Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609140000+TO+202609142359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Interpreting and Steering LLM Agents for Social Simulations",
+      "url": "https://arxiv.org/abs/2609.16436v1",
+      "published": "2026-09-14T23:23:23Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "How Good Are Time-Series Foundation Models for Pedestrian Crowd Count Forecasting? A Cross-Dataset Comparative Study",
+      "url": "https://arxiv.org/abs/2609.16415v1",
+      "published": "2026-09-14T22:46:32Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "On the Expressive Power of Implicit Line-Graph Higher-Order Weisfeiler--Leman",
+      "url": "https://arxiv.org/abs/2609.16412v1",
+      "published": "2026-09-14T22:34:54Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

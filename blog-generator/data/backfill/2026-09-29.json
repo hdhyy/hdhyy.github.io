@@ -1,0 +1,51 @@
+{
+  "date": "2026-09-29",
+  "retrievedAt": "2026-10-03T09:45:40.250Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609290000+TO+202609292359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Introducing GPT-6.1 Sol",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "published": "2026-09-29",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 29, 2026",
+      "evidenceUrl": "https://openai.com/news/"
+    },
+    {
+      "title": "Introducing dots",
+      "url": "https://openai.com/index/introducing-dots/",
+      "published": "2026-09-29",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 29, 2026"
+    },
+    {
+      "title": "DevDay 2026 Recap",
+      "url": "https://openai.com/index/devday-2026-recap/",
+      "published": "2026-09-29",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 29, 2026"
+    },
+    {
+      "title": "Provable Test-Time Scaling for Beam Search in LLM Reasoning",
+      "url": "https://arxiv.org/abs/2609.38672v1",
+      "published": "2026-09-29T23:56:06Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Where Scientific Search Agents Fail: Decision-Checkpoint Auditing of Exposure and Inspection Attempts",
+      "url": "https://arxiv.org/abs/2609.38670v1",
+      "published": "2026-09-29T23:53:00Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives",
+      "url": "https://arxiv.org/abs/2609.38666v1",
+      "published": "2026-09-29T23:47:58Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

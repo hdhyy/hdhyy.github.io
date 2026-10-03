@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-16",
+  "retrievedAt": "2026-10-03T09:44:57.104Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609160000+TO+202609162359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers",
+      "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+      "published": "2026-09-16",
+      "source": "NVIDIA",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 16, 2026"
+    },
+    {
+      "title": "Reimagining advertising with AI",
+      "url": "https://openai.com/index/reimagining-advertising-with-ai/",
+      "published": "2026-09-16",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 16, 2026"
+    },
+    {
+      "title": "For Your Eyes Only: Evaluating Coordination Between Isolated Language Model Instances",
+      "url": "https://arxiv.org/abs/2609.19504v1",
+      "published": "2026-09-16T23:41:25Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Efficiently Linking Unstructured Data for Multi-step Reasoning",
+      "url": "https://arxiv.org/abs/2609.19491v1",
+      "published": "2026-09-16T23:16:45Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "BI-Agent and BI-Bench: Towards Automating End-to-End Business Intelligence",
+      "url": "https://arxiv.org/abs/2609.20886v1",
+      "published": "2026-09-16T22:36:20Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-07",
+  "retrievedAt": "2026-10-03T09:44:26.961Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609070000+TO+202609072359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "LLMs for Social Network Modeling: From Network Generation to Dynamic Processes",
+      "url": "https://arxiv.org/abs/2609.08049v1",
+      "published": "2026-09-07T23:24:27Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "SAFER-Activities: A Dataset for Smart Assessment of Fall Events and Routine Activities",
+      "url": "https://arxiv.org/abs/2609.08038v2",
+      "published": "2026-09-07T22:44:50Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Eliciting Self-Verification in Multimodal Reasoning Agents with Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2609.08025v1",
+      "published": "2026-09-07T22:15:47Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

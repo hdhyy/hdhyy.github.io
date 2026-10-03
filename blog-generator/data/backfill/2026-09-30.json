@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-30",
+  "retrievedAt": "2026-10-03T09:45:43.564Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609300000+TO+202609302359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Gemini 4 Argon: our next era of frontier intelligence",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "published": "2026-09-30",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 30, 2026"
+    },
+    {
+      "title": "Disrupting a coordinated model-distillation campaign",
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+      "published": "2026-09-30",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 30, 2026"
+    },
+    {
+      "title": "Contextual trajectory and incremental contextual displacement: Towards using LLMs to understand dynamic, utterance-specific meaning construction",
+      "url": "https://arxiv.org/abs/2610.00840v1",
+      "published": "2026-09-30T23:56:18Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "SHARPO: Segment-Level Credit Assignment for Agentic Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2610.00838v1",
+      "published": "2026-09-30T23:51:11Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Kepler: Auditable World Models for ARC-AGI-3",
+      "url": "https://arxiv.org/abs/2610.00834v1",
+      "published": "2026-09-30T23:46:59Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

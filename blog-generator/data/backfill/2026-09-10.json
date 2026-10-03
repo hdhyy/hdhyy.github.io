@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-10",
+  "retrievedAt": "2026-10-03T09:44:37.021Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609100000+TO+202609102359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Detecting and countering misuse of AI: September 2026",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "published": "2026-09-10",
+      "source": "Anthropic",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 10, 2026",
+      "evidenceUrl": "https://www.anthropic.com/news"
+    },
+    {
+      "title": "The Gemini app is now available for Windows",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
+      "published": "2026-09-10",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 10, 2026"
+    },
+    {
+      "title": "d-Matrix Adopts NVIDIA NVLink Fusion for Rack-Scale XPU Deployment",
+      "url": "https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/",
+      "published": "2026-09-10",
+      "source": "NVIDIA",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 10, 2026"
+    },
+    {
+      "title": "Introducing ChatGPT for Financial Services",
+      "url": "https://openai.com/index/introducing-chatgpt-financial-services/",
+      "published": "2026-09-10",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 10, 2026"
+    },
+    {
+      "title": "Robust Prototypical Networks for Few-Shot Sensor Fault Diagnosis",
+      "url": "https://arxiv.org/abs/2609.12287v1",
+      "published": "2026-09-10T23:36:05Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "T-GADE: Thermodynamical Generative-AI-Driven Evolution of LLM Artifacts",
+      "url": "https://arxiv.org/abs/2609.12286v1",
+      "published": "2026-09-10T23:33:37Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Amortized Low-Rank Adaptation for Model-Based Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2609.12278v2",
+      "published": "2026-09-10T23:16:40Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

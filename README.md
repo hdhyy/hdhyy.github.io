@@ -155,3 +155,9 @@ MIT License
 - 每期路徑為 `/YYYY/MM/DD/ai-news/`。每日生成器只增補日報和首頁日報區塊，保留既有歷史文章。
 - 工作流先測試、抓取、生成及保存，再上傳純靜態網站 Pages artifact 並直接部署，不依賴機器人 push 觸發 Pages。
 - 使用 repository-scoped GITHUB_TOKEN，無需新增第三方密鑰。公共倉庫長期無活動可能停用排程，請檢查 Actions 的啟用狀態。
+
+## 歷史補檔
+
+歷史日期列表：[/ai-news/](https://hdhyy.github.io/ai-news/)。
+
+使用 `node blog-generator/scripts/backfill-news.js START END [verified-announcements.json]` 按 UTC 日期補檔，再執行 `node blog-generator/scripts/build-news.js`。既有日報不覆寫。來源查詢與原始日期保存在 `blog-generator/data/backfill/`，官方公告欄位為 title、url、published、source、evidence。只有已核對原頁日期的公告才能提供給腳本。arXiv 使用 Atom published 首版提交時間，不冒充網站正式公告日期。歷史頁標示事後補建，沒有可核對資料的日期保留說明。

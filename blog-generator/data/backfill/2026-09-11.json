@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-11",
+  "retrievedAt": "2026-10-03T09:44:40.522Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609110000+TO+202609112359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "$τ$-Elicitation: Benchmarking multi-turn entity extraction in voice agents",
+      "url": "https://arxiv.org/abs/2609.13602v1",
+      "published": "2026-09-11T23:18:41Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Predictive audio representations for early detection and tracking of hidden dynamic objects",
+      "url": "https://arxiv.org/abs/2609.13595v1",
+      "published": "2026-09-11T23:05:23Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "mKernel: Fast Multi-GPU, Multi-Node Fused Kernels",
+      "url": "https://arxiv.org/abs/2609.13585v1",
+      "published": "2026-09-11T22:50:04Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

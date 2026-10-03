@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-13",
+  "retrievedAt": "2026-10-03T09:44:47.179Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609130000+TO+202609132359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Self-Orchestrating Language Models: Leveraging Semantic Dependence for Efficient Inference",
+      "url": "https://arxiv.org/abs/2609.14850v1",
+      "published": "2026-09-13T23:48:33Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "LLMs as Oracles: Reliance on LLMs for Subjective Personal Questions",
+      "url": "https://arxiv.org/abs/2609.14849v1",
+      "published": "2026-09-13T23:47:13Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "A Responsive Present, a Shared Past, a Social Other: Teens' Overreliance on Companion AI Chatbots",
+      "url": "https://arxiv.org/abs/2609.14843v1",
+      "published": "2026-09-13T23:25:54Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

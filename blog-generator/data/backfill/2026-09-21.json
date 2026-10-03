@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-21",
+  "retrievedAt": "2026-10-03T09:45:13.643Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609210000+TO+202609212359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "NVIDIA Launches DSX Ready to Qualify Power and Cooling Products for AI Factories",
+      "url": "https://blogs.nvidia.com/blog/dsx-ready-ai-factories-power-cooling/",
+      "published": "2026-09-21",
+      "source": "NVIDIA",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 21, 2026"
+    },
+    {
+      "title": "Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains",
+      "url": "https://arxiv.org/abs/2609.25498v2",
+      "published": "2026-09-21T23:57:31Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Towards participatory speech dataset curation: A queer case study and conceptual framework",
+      "url": "https://arxiv.org/abs/2609.25496v1",
+      "published": "2026-09-21T23:55:24Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "RGSQ: Riemannian Geometry-Sensitive Quantization for Large Vision-Language Models",
+      "url": "https://arxiv.org/abs/2609.25492v1",
+      "published": "2026-09-21T23:42:52Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

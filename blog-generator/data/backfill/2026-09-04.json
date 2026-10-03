@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-04",
+  "retrievedAt": "2026-10-03T09:44:17.042Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609040000+TO+202609042359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Create your best tracks yet with Lyria 3.5 in Gemini.",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/better-tracks-lyria-gemini/",
+      "published": "2026-09-04",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 04, 2026"
+    },
+    {
+      "title": "DI-Bench: Systematically Generating In-Domain Data Intelligence Benchmarks for Enterprise Agents",
+      "url": "https://arxiv.org/abs/2609.05776v1",
+      "published": "2026-09-04T23:53:21Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Inference-Time Graph Engineering for Multi-Agent LLM Workflows",
+      "url": "https://arxiv.org/abs/2609.05774v1",
+      "published": "2026-09-04T23:32:11Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "K-Dense BYOK: An Open-Source AI Research Assistant That Runs Locally and Keeps a Hash-Chained Lab Notebook",
+      "url": "https://arxiv.org/abs/2610.00074v1",
+      "published": "2026-09-04T23:26:54Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

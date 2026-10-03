@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-19",
+  "retrievedAt": "2026-10-03T09:45:07.038Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609190000+TO+202609192359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Triggers and Diagnostics for LLM-Based Interpretability Failures in Active Inference Agents",
+      "url": "https://arxiv.org/abs/2609.23215v1",
+      "published": "2026-09-19T21:10:45Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Environment Steering: Using Data Flow Control to Improve Agent Utility and Safety",
+      "url": "https://arxiv.org/abs/2609.35807v1",
+      "published": "2026-09-19T20:13:58Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Do Not Trust the Benchmark: Limitations of General LLM Rankings and a Case for Task-Specific Evaluation",
+      "url": "https://arxiv.org/abs/2609.23201v1",
+      "published": "2026-09-19T20:02:05Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

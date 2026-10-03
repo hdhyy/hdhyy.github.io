@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-28",
+  "retrievedAt": "2026-10-03T09:45:36.944Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609280000+TO+202609282359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Introducing Claude Sonnet 5.5",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "published": "2026-09-28",
+      "source": "Anthropic",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 28, 2026"
+    },
+    {
+      "title": "Towards safety cases for frontier AI training",
+      "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training/",
+      "published": "2026-09-28",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 28, 2026"
+    },
+    {
+      "title": "Calibrated to Whom? Persona and Language Effects on Cultural Values in JEV",
+      "url": "https://arxiv.org/abs/2609.36399v1",
+      "published": "2026-09-28T23:53:31Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Where Should Physics Enter a Molecular Crystal Generator?",
+      "url": "https://arxiv.org/abs/2609.36398v1",
+      "published": "2026-09-28T23:53:27Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Reward-rate Policy Gradient for Efficient Machine Learning Engineering Agents",
+      "url": "https://arxiv.org/abs/2609.36393v1",
+      "published": "2026-09-28T23:46:08Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

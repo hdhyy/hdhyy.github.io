@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-20",
+  "retrievedAt": "2026-10-03T09:45:10.340Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609200000+TO+202609202359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Agents That Edit Documents: Measuring Agentic PDF Forgery Against a Non-Agentic Control",
+      "url": "https://arxiv.org/abs/2609.23953v1",
+      "published": "2026-09-20T23:54:38Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "HaikuS2S: A Cascaded System For Responding In Verse",
+      "url": "https://arxiv.org/abs/2609.23951v1",
+      "published": "2026-09-20T23:47:30Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Echo State Network (ESN) for Signal Recovery in RF-Impaired IBFD MIMO Systems",
+      "url": "https://arxiv.org/abs/2609.23945v1",
+      "published": "2026-09-20T23:40:47Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

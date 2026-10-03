@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-17",
+  "retrievedAt": "2026-10-03T09:45:00.426Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609170000+TO+202609172359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Introducing the Life Sciences Verification Program",
+      "url": "https://www.anthropic.com/news/life-sciences-verification-program",
+      "published": "2026-09-17",
+      "source": "Anthropic",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 17, 2026"
+    },
+    {
+      "title": "The new CC, an AI agent built for families",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
+      "published": "2026-09-17",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 17, 2026"
+    },
+    {
+      "title": "Can Agents Design Better Chips with a Higher Level Abstraction?",
+      "url": "https://arxiv.org/abs/2609.21157v1",
+      "published": "2026-09-17T23:55:03Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "EnSol: an environment-aware graph neural network for molecular solubility prediction",
+      "url": "https://arxiv.org/abs/2609.21151v1",
+      "published": "2026-09-17T23:35:33Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Clinician-Grounded Quality Assurance for AI-Assisted Psychiatric Intake",
+      "url": "https://arxiv.org/abs/2609.21149v1",
+      "published": "2026-09-17T23:29:21Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

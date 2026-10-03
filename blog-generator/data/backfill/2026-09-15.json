@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-15",
+  "retrievedAt": "2026-10-03T09:44:53.786Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609150000+TO+202609152359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+      "published": "2026-09-15",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 15, 2026"
+    },
+    {
+      "title": "Sharpen your study routine with new Gemini Notebook tools",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/",
+      "published": "2026-09-15",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 15, 2026"
+    },
+    {
+      "title": "Introducing Meta One: A Subscription Service With More Features and AI to Create, Connect, and Stand Out",
+      "url": "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/",
+      "published": "2026-09-15",
+      "source": "Meta",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 15, 2026"
+    },
+    {
+      "title": "Collaborative Memory for Multi-Agent VLM Systems",
+      "url": "https://arxiv.org/abs/2609.17921v2",
+      "published": "2026-09-15T23:31:09Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Walking the Score Manifold: Continuous-time Generative Dynamics on Learned Data Manifolds",
+      "url": "https://arxiv.org/abs/2609.17901v1",
+      "published": "2026-09-15T22:42:24Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "OBC-Prune: Outcome-Based Calibration for Large Reasoning Model Pruning",
+      "url": "https://arxiv.org/abs/2609.17890v1",
+      "published": "2026-09-15T22:30:48Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

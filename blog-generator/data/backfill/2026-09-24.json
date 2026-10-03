@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-24",
+  "retrievedAt": "2026-10-03T09:45:23.651Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609240000+TO+202609242359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "The Biggest News From Connect 2026",
+      "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+      "published": "2026-09-24",
+      "source": "Meta",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 24, 2026"
+    },
+    {
+      "title": "Optimal transport meets speech: a tutorial review",
+      "url": "https://arxiv.org/abs/2609.31787v1",
+      "published": "2026-09-24T23:58:23Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Audio LLMs Know When They Can't Hear You",
+      "url": "https://arxiv.org/abs/2609.30625v2",
+      "published": "2026-09-24T23:22:40Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Subjects, Not Authors: The Authorship Hazard in Agentic Dataspaces",
+      "url": "https://arxiv.org/abs/2609.30614v1",
+      "published": "2026-09-24T22:58:16Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

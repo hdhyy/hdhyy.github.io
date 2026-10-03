@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-23",
+  "retrievedAt": "2026-10-03T09:45:20.284Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609230000+TO+202609232359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
+      "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+      "published": "2026-09-23",
+      "source": "Anthropic",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 23, 2026"
+    },
+    {
+      "title": "Gemini 3.8 text-to-speech says hello",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+      "published": "2026-09-23",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 23, 2026"
+    },
+    {
+      "title": "A new wave of Connected Apps is rolling out to Gemini.",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/",
+      "published": "2026-09-23",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 23, 2026"
+    },
+    {
+      "title": "Persuaded, Not Informed: Incentive-Misaligned Witnesses Defeat In-Context Grounding",
+      "url": "https://arxiv.org/abs/2609.28854v1",
+      "published": "2026-09-23T23:52:24Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "RECLAIM: Can Agents Reproduce the Claims of Machine Learning Papers?",
+      "url": "https://arxiv.org/abs/2609.28850v1",
+      "published": "2026-09-23T23:41:50Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Blockchain-Enabled Artificial Intelligence and AI Agents for Secure Data Sharing and Cybersecurity Applications",
+      "url": "https://arxiv.org/abs/2609.28843v1",
+      "published": "2026-09-23T23:20:47Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

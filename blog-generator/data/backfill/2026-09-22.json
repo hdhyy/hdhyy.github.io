@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-22",
+  "retrievedAt": "2026-10-03T09:45:16.953Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609220000+TO+202609222359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Introducing Claude Opus 5.5",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "published": "2026-09-22",
+      "source": "Anthropic",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 22, 2026"
+    },
+    {
+      "title": "Count Evidence, Not Sentences: Tempered Evidence Fusion of LLM Judgments for Long-Text Value Measurement",
+      "url": "https://arxiv.org/abs/2609.27165v1",
+      "published": "2026-09-22T23:52:38Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "The Linear Representation Hypothesis Needs a Group Action",
+      "url": "https://arxiv.org/abs/2609.27158v1",
+      "published": "2026-09-22T23:42:39Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "The Like Trap: Multi-Stage Poisoning against Agents in Similarity-based Recommendation Systems",
+      "url": "https://arxiv.org/abs/2609.27155v1",
+      "published": "2026-09-22T23:39:24Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}

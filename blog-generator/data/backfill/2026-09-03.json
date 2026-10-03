@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-03",
+  "retrievedAt": "2026-10-03T09:44:13.731Z",
+  "api": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+submittedDate%3A%5B202609030000+TO+202609032359%5D&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending",
+  "items": [
+    {
+      "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/",
+      "published": "2026-09-03",
+      "source": "Google",
+      "dateEvidence": "官方原頁或公告列表標示日期：Sep 03, 2026"
+    },
+    {
+      "title": "NVIDIA to Acquire Hugging Face",
+      "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+      "published": "2026-09-03",
+      "source": "NVIDIA",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 3, 2026"
+    },
+    {
+      "title": "Safety overview: GPT‑6 Astra",
+      "url": "https://openai.com/index/safety-overview-gpt-6-astra/",
+      "published": "2026-09-03",
+      "source": "OpenAI",
+      "dateEvidence": "官方原頁或公告列表標示日期：September 3, 2026"
+    },
+    {
+      "title": "Dynamic Adaptation of the LLM Context for Generating Routines with Coupled Semantics",
+      "url": "https://arxiv.org/abs/2609.04570v1",
+      "published": "2026-09-03T23:56:18Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "Extremely Sparse Supervision Incentivizes Reasoning Ability",
+      "url": "https://arxiv.org/abs/2609.04565v1",
+      "published": "2026-09-03T23:38:48Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    },
+    {
+      "title": "La Agente Óptima: Towards Agentic Self-Driving Laboratories",
+      "url": "https://arxiv.org/abs/2609.04564v1",
+      "published": "2026-09-03T23:37:48Z",
+      "source": "arXiv",
+      "dateEvidence": "arXiv Atom published（首版提交時間）"
+    }
+  ],
+  "failures": []
+}
